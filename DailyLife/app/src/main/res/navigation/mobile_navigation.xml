@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.dailylife.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home"
+        >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_schedule"
+            app:destination="@id/navigation_schedule"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_in_left"
+            app:popEnterAnim="@android:anim/slide_out_right"
+            app:popExitAnim="@android:anim/slide_in_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_schedule"
+        android:name="com.example.dailylife.ui.schedule.ScheduleFragment"
+        android:label="Schedule"
+        tools:layout="@layout/fragment_schedule" />
+
+    <fragment
+        android:id="@+id/navigation_news"
+        android:name="com.example.dailylife.ui.news.NewsFragment"
+        android:label="News"
+        tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/navigation_entertainment"
+        android:name="com.example.dailylife.ui.entertainment.EntertainmentFragment"
+        android:label="Entertainment"
+        tools:layout="@layout/fragment_entertainment" >
+        <action
+            android:id="@+id/action_navigation_entertainment_to_navigation_news"
+            app:destination="@id/navigation_news"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_in_left"
+            app:popEnterAnim="@android:anim/slide_out_right"
+            app:popExitAnim="@android:anim/slide_in_left" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_navigation_schedule"
+        app:destination="@id/navigation_schedule"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit"
+        app:popEnterAnim="@anim/fragment_fade_enter"
+        app:popExitAnim="@anim/fragment_fade_exit" />
+
+
+</navigation>
